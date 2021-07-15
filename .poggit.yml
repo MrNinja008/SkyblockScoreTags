@@ -5,7 +5,7 @@ branches:
 projects:
    SkyblockAddon-6.0.0:
     path: ""
-lint:
-phpstan: false
+  lint:
+    phpstan: false
 
 
