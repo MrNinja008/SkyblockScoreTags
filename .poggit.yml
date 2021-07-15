@@ -1,0 +1,6 @@
+--- # Poggit-CI Manifest. Open the CI at https://poggit.pmmp.io/ci/MrNinja008/SkyblockAddon-6.0.0-
+build-by-default: true
+branches:
+- main
+projects: []
+...
