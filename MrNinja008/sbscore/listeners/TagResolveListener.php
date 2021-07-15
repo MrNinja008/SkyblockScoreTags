@@ -50,6 +50,6 @@ class TagResolveListener implements Listener{
 			break;
 		}
 
-		$tag->setValue(strval($value));
+		$tag->setValue(strval($value))
 	}
 }
