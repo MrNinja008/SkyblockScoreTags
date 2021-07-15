@@ -65,7 +65,7 @@ use function strval;
 			return $isle->getBlocksBuilt();
 		}
    
-   public function getIsleMembers(Player $player): 
+   public function getIsleMembers(Player $player){
 			$session = $this->SkyBlock->getSessionManager()->getSession($player);
 
 			
