@@ -65,7 +65,7 @@ use function strval;
 			return $isle->getBlocksBuilt();
 		}
    
-   public function getIsleMembers(Player $player): string{
+   public function getIsleMembers(Player $player): 
 			$session = $this->SkyBlock->getSessionManager()->getSession($player);
 
 			
@@ -78,7 +78,7 @@ use function strval;
 			return count($isle->getMembers());
 		}
 
-		public function getIsleSize(Player $player): string{
+		public function getIsleSize(Player $player): 
 			$session = $this->SkyBlock->getSessionManager()->getSession($player);
 
 			if((is_null($session)) || (!$session->hasIsland())){
