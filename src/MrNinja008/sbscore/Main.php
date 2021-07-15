@@ -3,7 +3,6 @@ declare(strict_types = 1);
 
 namespace MrNinja008\sbscore;
 
-use MrNinja008\sbscore\listeners\EventListener;
 use MrNinja008\sbscore\listeners\TagResolveListener;
 use Ifera\ScoreHud\scoreboard\ScoreTag;
 use Ifera\ScoreHud\ScoreHudSettings;
