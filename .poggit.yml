@@ -3,6 +3,6 @@ build-by-default: true
 branches:
 - main
 projects:
-   sbscore:
-    path: ""
+   SkyblockAddon-6.0.0:
+    path: "MrNinja008/sbscore"
 ...
