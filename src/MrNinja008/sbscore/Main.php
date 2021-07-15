@@ -5,6 +5,7 @@ namespace MrNinja008\sbscore;
 
 use MrNinja008\sbscore\listeners\TagResolveListener;
 use Ifera\ScoreHud\scoreboard\ScoreTag;
+use Ifera\ScoreHud\event\PlayerTagUpdateEvent;
 use Ifera\ScoreHud\ScoreHudSettings;
 use pocketmine\plugin\PluginBase;
 use pocketmine\scheduler\ClosureTask;
