@@ -3,7 +3,7 @@ This is a Skyblock Scorehud addon for Skyblock Plugin Made by [andresbytes](http
 # NOTE
 This scorehud addon only work for latest Scorehud verison (6.0.0+) made by Ifera
 ### ScoreTags
-| Tag | Description |
+| Tags | Description |
 |:--:|:--:|
 |`{is.state}`|Shows The Status Of Skyblock island weather it is locked or Unlocked|
 |`{is.blocks}`|Display BlocksPlaced Count of a Player Island|
