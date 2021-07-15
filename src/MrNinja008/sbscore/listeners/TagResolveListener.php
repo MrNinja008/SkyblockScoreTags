@@ -30,23 +30,23 @@ class TagResolveListener implements Listener{
 
 		switch($tags[1]){
 			case "state":
-				$value = $this->getIsleBlock($event->getPlayer());
+				$value = $this->isLocked($event->getPlayer());
 			break;
 
 			case "blocks":
-				$value = $this->getIsleBlocks($event->getPlayer());
+				$value = $this->getBlocksBuilt($event->getPlayer());
 			break;
 			
 			case "size":
-			  $value = $this->getIsleSize($event->getPlayer());
+			  $value = $this->getCategory($event->getPlayer());
 			break;
 			
 			case "members":
-			  $value = $this->getIsleMembers($event->getPlayer());
+			  $value = $this->getMembers($event->getPlayer());
 			break;
 			
 			case "rank":
-			  $value = $this->getIsleRank($event->getPlayer());
+			  $value = $this->getRank($event->getPlayer());
 			break;
 		}
 
