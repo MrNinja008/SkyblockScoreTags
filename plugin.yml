@@ -4,4 +4,4 @@ api: [3.0.0]
 version: 1.0.0
 author: MrNinja008
 description: A plugin implementing Skyblock tags for ScoreHud.
-depend: [ScoreHud, Skyblock]
+depend: [ScoreHud, SkyBlock]
