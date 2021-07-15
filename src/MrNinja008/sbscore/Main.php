@@ -42,7 +42,7 @@ use function strval;
 	}
 	
 	public function getIsleState(Player $player): string{
-	  $session = $this->skyBlock->getSessionManager()->getSession($player);
+	  $session = $this->SkyBlock->getSessionManager()->getSession($player);
 
 		if($session === null){
 			return "No Island";
@@ -54,7 +54,7 @@ use function strval;
   	}
   	
   	public function getIsleBlocks(Player $player){
-			$session = $this->skyBlock->getSessionManager()->getSession($player);
+			$session = $this->SkyBlock->getSessionManager()->getSession($player);
 
 			if($session === null){
 				return "No Island";
@@ -66,7 +66,7 @@ use function strval;
 		}
    
    public function getIsleMembers(Player $player): string{
-			$session = $this->skyBlock->getSessionManager()->getSession($player);
+			$session = $this->SkyBlock->getSessionManager()->getSession($player);
 
 			if($session === null){
 				return "No Island";
@@ -78,7 +78,7 @@ use function strval;
 		}
 
 		public function getIsleSize(Player $player): string{
-			$session = $this->skyBlock->getSessionManager()->getSession($player);
+			$session = $this->SkyBlock->getSessionManager()->getSession($player);
 
 			if($session === null){
 				return "No Island";
@@ -90,7 +90,7 @@ use function strval;
 		}
 		
 		public function getIsleRank(Player $player): string{
-			$session = $this->skyBlock->getSessionManager()->getSession($player);
+			$session = $this->SkyBlock->getSessionManager()->getSession($player);
 
 			if($session === null){
 				return "No Island";
