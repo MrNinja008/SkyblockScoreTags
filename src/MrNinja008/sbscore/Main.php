@@ -1,5 +1,5 @@
 <?php
-declare(strict_types = 1);
+declare (strict_types = 1);
 
 namespace MrNinja008\sbscore;
 
@@ -16,85 +16,96 @@ use room17\SkyBlock\island\RankIds;
 use room17\SkyBlock\SkyBlock;
 use function strval;
 
-   class Main extends PluginBase{
-     
-     /** @var SkyBlock */
-	private $skyblock;
+class Main extends PluginBase {
+  /** @var SkyBlock */
+	  private $skyblock;
 
-	public function onEnable(){
-	$this->saveDefaultConfig();
-		$this->skyblock = $this->getServer()->getPluginManager()->getPlugin("SkyBlock");
-		$this->getServer()->getPluginManager()->registerEvents(new TagResolveListener($this), $this);
+  public function onEnable()
+  {
+    $this->saveDefaultConfig();
+    $this->skyblock = $this->getServer()->getPluginManager()->getPlugin("SkyBlock");
+    $this->getServer()->getPluginManager()->registerEvents(new TagResolveListener($this), $this);
 
-		$this->getScheduler()->scheduleRepeatingTask(new ClosureTask(function(int $_): void{
-			foreach($this->getServer()->getOnlinePlayers() as $player){
-				if(!$player->isOnline()){
-					continue;
-				}
+    $this->getScheduler()->scheduleRepeatingTask(
+      new ClosureTask(
+        function(int $_):void {
+          foreach ($this->getServer()->getOnlinePlayers() as $player) {
+            if (!$player->isOnline()) {
+              continue;
+            }
 
-				(new PlayerTagUpdateEvent($player, new ScoreTag("skyblock.state", strval($this->getIsleState($player)))))->call();
-				(new PlayerTagUpdateEvent($player, new ScoreTag("skyblock.blocks", strval($this->getIsleBlocks($player)))))->call();
-		 	  (new PlayerTagUpdateEvent($player, new ScoreTag("skyblock.size", strval($this->getIsleSize($player)))))->call();
-  		  (new PlayerTagUpdateEvent($player, new ScoreTag("skyblock.rank", strval($this->getIsleRank($player)))))->call();
-			}
-		}), 20);
-	}
-	
-	public function getIsleState(Player $player): string{
-	  $session = $this->skyblock->getSessionManager()->getSession($player);
+            (new PlayerTagUpdateEvent($player, new ScoreTag("skyblock.state", strval($this->getIsleState($player)))))->call();
+            (new PlayerTagUpdateEvent($player, new ScoreTag("skyblock.blocks", strval($this->getIsleBlocks($player)))))->call();
+            (new PlayerTagUpdateEvent($player, new ScoreTag("skyblock.size", strval($this->getIsleSize($player)))))->call();
+            (new PlayerTagUpdateEvent($player, new ScoreTag("skyblock.rank", strval($this->getIsleRank($player)))))->call();
+          }
+        }
+      ),
+      20
+    );
+  }
 
-		if((is_null($session)) || (!$session->hasIsland())){
-				return "No Island";
-		}
+  public function getIsleState(Player $player) : string
+  {
+    $session = $this->skyblock->getSessionManager()->getSession($player);
 
-	  	$isle = $session->getIsland();
+    if ((is_null($session)) || (!$session->hasIsland())) {
+      return "No Island";
+    }
 
-			return $isle->isLocked() ? "Locked" : "Unlocked";
-  	}
-  	
-  	public function getIsleBlocks(Player $player){
-			$session = $this->skyblock->getSessionManager()->getSession($player);
+    $isle = $session->getIsland();
 
-			if((is_null($session)) || (!$session->hasIsland())){
-				return "No Island";
-			}
+    return $isle->isLocked() ? "Locked" : "Unlocked";
+  }
 
-			$isle = $session->getIsland();
+  public function getIsleBlocks(Player $player)
+  {
+    $session = $this->skyblock->getSessionManager()->getSession($player);
 
-			return $isle->getBlocksBuilt();
-		}
-   
-   
-		public function getIsleSize(Player $player){
-			$session = $this->skyblock->getSessionManager()->getSession($player);
+    if ((is_null($session)) || (!$session->hasIsland())) {
+      return "No Island";
+    }
 
-			if((is_null($session)) || (!$session->hasIsland())){
-				return "No Island";
-			}
+    $isle = $session->getIsland();
 
-			$isle = $session->getIsland();
+    return $isle->getBlocksBuilt();
+  }
 
-			return $isle->getCategory();
-		}
-		
-		public function getIsleRank(Player $player): string{
-			$session = $this->skyblock->getSessionManager()->getSession($player);
+  public function getIsleSize(Player $player)
+  {
+    $session = $this->skyblock->getSessionManager()->getSession($player);
 
-			if((is_null($session)) || (!$session->hasIsland())){
-				return "No Island";
-			}
+    if ((is_null($session)) || (!$session->hasIsland())) {
+      return "No Island";
+    }
 
-			switch($session->getRank()){
-				case RankIds::MEMBER:
-					return "Member";
-				case RankIds::OFFICER:
-					return "Officer";
-				case RankIds::LEADER:
-					return "Leader";
-				case RankIds::FOUNDER:
-					return "Founder";
-			}
+    $isle = $session->getIsland();
 
-			return "No Rank";
-		}
-	}
+    return $isle->getCategory();
+  }
+
+  public function getIsleRank(Player $player) : string
+  {
+    $session = $this->skyblock->getSessionManager()->getSession($player);
+
+    if ((is_null($session)) || (!$session->hasIsland())) {
+      return "No Island";
+    }
+
+    switch ($session->getRank()) {
+      case RankIds::MEMBER:
+        return "Member";
+
+      case RankIds::OFFICER:
+        return "Officer";
+
+      case RankIds::LEADER:
+        return "Leader";
+
+      case RankIds::FOUNDER:
+        return "Founder";
+    }
+
+    return "No Rank";
+  }
+}
