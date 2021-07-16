@@ -5,8 +5,8 @@ This scorehud addon only work for latest Scorehud verison (6.0.0+) made by Ifera
 ### ScoreTags
 | Tags | Description |
 |:--:|:--:|
-|`{is.state}`|Shows The Status Of Skyblock island weather it is locked or Unlocked|
-|`{is.blocks}`|Display BlocksPlaced Count of a Player Island|
-|`{is.size}`|Display The Size Of Skyblock Island|
-|`{is.rank}`|Shows Rank of the player of thier island example owner, officer|
-|`{i
+|`{skyblock.state}`|Shows The Status Of Skyblock island weather it is locked or Unlocked|
+|`{skyblock.blocks}`|Display BlocksPlaced Count of a Player Island|
+|`{skyblock.size}`|Display The Size Of Skyblock Island|
+|`{skyblock.rank}`|Shows Rank of the player of thier island example owner, officer|
+
