@@ -3,9 +3,13 @@ build-by-default: true
 branches:
 - main
 projects:
-   SkyblockAddon-6.0.0:
-    path: SkyblockAddon-6.0.0
-    lint:
-      phpstan: false
+  SkyblockAddon-6.0.0:
+     path: SkyblockAddon-6.0.0
+     lint:
+       phpstan: false
+
+    
+
+      
 
 
