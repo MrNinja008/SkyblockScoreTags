@@ -1,4 +1,5 @@
 <?php
+
 declare (strict_types = 1);
 
 namespace MrNinja008\sbscore;
@@ -24,6 +25,18 @@ class Main extends PluginBase {
   {
     $this->saveDefaultConfig();
     $this->skyblock = $this->getServer()->getPluginManager()->getPlugin("SkyBlock");
+    
+    if(!$this->skyblock->isEnabled()){
+      
+      $this->getServer()->getPluginManager()->disableplugin();
+      
+    }
+    
+    if (!$this->skyblock) {
+      
+      $this->getServer()->getPluginManager()->disableplugin();
+    }
+    
     $this->getServer()->getPluginManager()->registerEvents(new TagResolveListener($this), $this);
 
     $this->getScheduler()->scheduleRepeatingTask(
