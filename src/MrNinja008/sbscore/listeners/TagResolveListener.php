@@ -5,15 +5,10 @@ declare(strict_types = 1);
 namespace MrNinja008\sbscore\listeners;
 
 use Ifera\ScoreHud\event\TagsResolveEvent;
-
 use MrNinja008\sbcore\Main;
-
 use pocketmine\event\Listener;
-
 use function count;
-
 use function explode;
-
 use function strval;
 
 class TagResolveListener implements Listener{
