@@ -9,4 +9,4 @@ This scorehud addon only work for latest Scorehud verison (6.0.0+) made by Ifera
 |`{is.blocks}`|Display BlocksPlaced Count of a Player Island|
 |`{is.size}`|Display The Size Of Skyblock Island|
 |`{is.rank}`|Shows Rank of the player of thier island example owner, officer|
-|`{is.members}`|Display The Count Of Island Members|
+|`{i
