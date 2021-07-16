@@ -4,7 +4,7 @@ branches:
 - main
 projects:
   SkyblockAddon-6.0.0:
-     path: MrNinja008
+     path: ""
      lint:
        phpstan: false
 
