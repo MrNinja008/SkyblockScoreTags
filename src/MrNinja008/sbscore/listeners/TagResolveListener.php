@@ -44,7 +44,7 @@ class TagResolveListener implements Listener{
                         break;
 
 			case "size":
-                        value = $this->plugin->getIsleSize($event->getPlayer());
+                        $value = $this->plugin->getIsleSize($event->getPlayer());
                         break;
 
 			case "rank":
