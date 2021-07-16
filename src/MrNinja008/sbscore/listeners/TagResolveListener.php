@@ -18,7 +18,8 @@ use function strval;
 
 class TagResolveListener implements Listener{
 
-	/** @var Main */	private $plugin;
+	/** @var Main */	
+        private $plugin;
 
 	public function __construct(Main $plugin){
 
@@ -27,11 +28,8 @@ class TagResolveListener implements Listener{
 	}
 
 	public function onTagResolve(TagsResolveEvent $event){
-
-		$tag = $event->getTag();
-
+                $tag = $event->getTag();
 		$tags = explode('.', $tag->getName(), 4);
-
 		$value = "";
 
 		if($tags[0] !== 'skyblock' || count($tags) < 4){
@@ -43,32 +41,20 @@ class TagResolveListener implements Listener{
 		switch($tags[1]){
 
 			case "state":
-
-				$value = $this->plugin->getIsleState($event->getPlayer());
-
-			break;
+                        $value = $this->plugin->getIsleState($event->getPlayer());
+                        break;
 
 			case "blocks":
-
-				$value = $this->plugin->getIsleBlocks($event->getPlayer());
-
-			break;
-
-			
+                        $value = $this->plugin->getIsleBlocks($event->getPlayer());
+                        break;
 
 			case "size":
-
-			  $value = $this->plugin->getIsleSize($event->getPlayer());
-
-			break;
-
-			
+                        value = $this->plugin->getIsleSize($event->getPlayer());
+                        break;
 
 			case "rank":
-
-			  $value = $this->plugin->getIsleRank($event->getPlayer());
-
-			break;
+                        $value = $this->plugin->getIsleRank($event->getPlayer());
+                        break;
 
 		}
 
