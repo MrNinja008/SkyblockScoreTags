@@ -23,7 +23,7 @@ use function strval;
 
 	public function onEnable(){
 	$this->saveDefaultConfig();
-		$this->$owningPlugin = $this->getServer()->getPluginManager()->getPlugin("SkyBlock");
+		$this->owningPlugin = $this->getServer()->getPluginManager()->getPlugin("SkyBlock");
 		$this->getServer()->getPluginManager()->registerEvents(new TagResolveListener($this), $this);
 
 		$this->getScheduler()->scheduleRepeatingTask(new ClosureTask(function(int $_): void{
