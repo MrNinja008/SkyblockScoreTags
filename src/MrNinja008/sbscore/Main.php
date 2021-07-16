@@ -19,11 +19,11 @@ use function strval;
    class Main extends PluginBase{
      
      /** @var SkyBlock */
-	private $owningPlugin;
+	private $skyblock;
 
 	public function onEnable(){
 	$this->saveDefaultConfig();
-		$this->owningPlugin = $this->getServer()->getPluginManager()->getPlugin("SkyBlock");
+		$this->skyblock = $this->getServer()->getPluginManager()->getPlugin("SkyBlock");
 		$this->getServer()->getPluginManager()->registerEvents(new TagResolveListener($this), $this);
 
 		$this->getScheduler()->scheduleRepeatingTask(new ClosureTask(function(int $_): void{
@@ -41,7 +41,7 @@ use function strval;
 	}
 	
 	public function getIsleState(Player $player): string{
-	  $session = $this->$owningPlugin->getSessionManager()->getSession($player);
+	  $session = $this->skyblock->getSessionManager()->getSession($player);
 
 		if((is_null($session)) || (!$session->hasIsland())){
 				return "No Island";
@@ -53,7 +53,7 @@ use function strval;
   	}
   	
   	public function getIsleBlocks(Player $player){
-			$session = $this->owningPlugin->getSessionManager()->getSession($player);
+			$session = $this->skyblock->getSessionManager()->getSession($player);
 
 			if((is_null($session)) || (!$session->hasIsland())){
 				return "No Island";
@@ -66,7 +66,7 @@ use function strval;
    
    
 		public function getIsleSize(Player $player){
-			$session = $this->owningPlugin->getSessionManager()->getSession($player);
+			$session = $this->skyblock->getSessionManager()->getSession($player);
 
 			if((is_null($session)) || (!$session->hasIsland())){
 				return "No Island";
@@ -78,7 +78,7 @@ use function strval;
 		}
 		
 		public function getIsleRank(Player $player): string{
-			$session = $this->owningPlugin->getSessionManager()->getSession($player);
+			$session = $this->skyblock->getSessionManager()->getSession($player);
 
 			if((is_null($session)) || (!$session->hasIsland())){
 				return "No Island";
