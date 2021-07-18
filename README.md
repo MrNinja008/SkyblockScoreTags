@@ -1,5 +1,5 @@
 # SkyblockScore Tags
-This is a Skyblock [Scorehud](https://poggit.pmmp.io/p/ScoreHud) addon for Skyblock Plugin Made by [andresbytes](https://poggit.pmmp.io/p/SkyBlock)
+This is a Skyblock [Scorehud](https://poggit.pmmp.io/p/ScoreHud) Tags for Skyblock Plugin Made by [andresbytes](https://poggit.pmmp.io/p/SkyBlock)
 # NOTE
 This scorehudScoreTags only work for latest Scorehud verison (6.0.0+) made by Ifera
 ### Placeholders
