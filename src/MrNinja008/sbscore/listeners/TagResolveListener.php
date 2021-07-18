@@ -23,10 +23,10 @@ class TagResolveListener implements Listener {
 
 	public function onTagResolve(TagsResolveEvent $event){
                 $tag = $event->getTag();
-		$tags = explode('.', $tag->getName(), 4);
+		$tags = explode('.', $tag->getName(), 2);
 		$value = "";
 
-		if($tags[0] !== 'skyblock' || count($tags) < 4){
+		if($tags[0] !== 'skyblock' || count($tags) < 2){
 
 			return;
 
