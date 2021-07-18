@@ -3,7 +3,7 @@ build-by-default: true
 branches:
 - main
 projects:
-  SkyblockAddon-6.0.0:
+  SkyblockScoreTags:
      path: ""
      lint:
        phpstan: false
